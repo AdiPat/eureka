@@ -1,0 +1,61 @@
+{
+  "name": "eureka",
+  "version": "0.0.1",
+  "description": "Discover your next startup idea in record time!",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "bin": {
+    "mcos": "dist/bin.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/bin.js",
+    "test": "vitest --testTimeout 30000",
+    "test:silent": "vitest --silent --testTimeout 30000",
+    "test:coverage": "vitest --coverage --testTimeout 30000",
+    "test:coverage:silent": "vitest --coverage --silent --testTimeout 30000"
+  },
+  "files": [
+    "dist",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mental-clarity",
+    "mental-health",
+    "productivity",
+    "clarity",
+    "focus",
+    "ai",
+    "artificial-intelligence",
+    "typescript"
+  ],
+  "author": "Aditya Patange (AdiPat) <contact.adityapatange@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^1.0.6",
+    "@ai-sdk/openai": "^1.0.12",
+    "@n8n/json-schema-to-zod": "^1.1.0",
+    "ai": "^4.0.22",
+    "axios": "^1.7.9",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.7",
+    "inquirer": "^12.5.0",
+    "json-schema-to-zod": "^2.6.0",
+    "mongodb": "^6.15.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "uuid": "^11.0.3",
+    "vitest": "^2.1.8",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@vitest/coverage-v8": "^2.1.8"
+  }
+}
