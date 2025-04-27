@@ -1,15 +1,6 @@
 import { Command } from "commander";
 import { loadEnv } from "./utils";
-
-/**
- * Loads environment variables from a specified file.
- * @param {string} envPath - Path to the environment file.
- */
-async function generateIdeas(options: any) {
-  // Placeholder for the generate function
-  console.log("Generating ideas with options:", options);
-  // Implement the logic to generate ideas based on the provided options
-}
+import { CelestioAgent } from "./celestio-agent";
 
 /**
  * Starts the interactive chat mode.
@@ -27,6 +18,7 @@ async function startChatMode(options: any) {
  */
 export function setupCli() {
   const program = new Command();
+  const celestio = new CelestioAgent({ verbose: true });
 
   program
     .name("celesto")
@@ -47,7 +39,13 @@ export function setupCli() {
     .option("--dump <path>", "Folder to dump knowledge base")
     .option("--assets <items>", "Assets to generate", (val) => val.split(","))
     .action(async (options) => {
-      await generateIdeas(options);
+      const generateIdeasOptions = {
+        topic: options.topic,
+        kb: options.kb,
+        dump: options.dump,
+        assets: options.assets,
+      };
+      await celestio.generateIdeas(generateIdeasOptions);
     });
 
   program
