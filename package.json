@@ -8,7 +8,7 @@
     "mcos": "dist/bin.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && rm -rf types && tsc",
     "start": "npm run build && node dist/bin.js",
     "test": "vitest --testTimeout 30000",
     "test:silent": "vitest --silent --testTimeout 30000",
