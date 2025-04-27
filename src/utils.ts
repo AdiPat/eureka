@@ -15,3 +15,16 @@ export function loadEnv(envPath?: string): boolean {
 
   return true;
 }
+
+/**
+ * Convert a string to an underscore-cased, alphanumeric format.
+ * @param input - The input string to format.
+ * @returns The formatted string in underscore case.
+ */
+export function toUnderscoreCase(input: string): string {
+  return input
+    .trim() // Remove leading and trailing whitespace
+    .replace(/\s+/g, "_") // Replace whitespace with underscores
+    .replace(/[^a-zA-Z0-9_]/g, "") // Remove non-alphanumeric characters except underscores
+    .toLowerCase(); // Convert to lowercase
+}
