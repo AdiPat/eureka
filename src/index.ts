@@ -26,5 +26,7 @@ function printBanner() {
  * Main function to run the SynthLite CLI.
  */
 export async function main() {
-  console.log("Welcome to Eureka!");
+  printBanner();
+  const program = setupCli();
+  await program.parseAsync();
 }
